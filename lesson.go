@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os/user"
+	"strings"
 	"time"
 )
 
@@ -77,4 +78,18 @@ func main() {
 	fmt.Println(1 << 1) // 0001 0010
 	fmt.Println(1 << 2) // 0001 0100
 	fmt.Println(1 << 3) // 0001 1000
+	fmt.Println(("Hello World"))
+	fmt.Println("Hello " + "World")
+	fmt.Println(string("Hello World"[0]))
+
+	var s string = "Hello World"
+	s = strings.Replace(s, "H", "X", 1)
+	fmt.Println(s)
+	fmt.Println(strings.Contains(s, "World"))
+	fmt.Println(`Test
+                        Test
+Test`)
+
+	fmt.Println("\"")
+	fmt.Println(`"`)
 }
