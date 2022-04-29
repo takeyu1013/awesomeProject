@@ -62,6 +62,21 @@ func circleArea(pi float64) func(radius float64) float64 {
 	}
 }
 
+func foo2(params ...int) {
+	fmt.Println(len(params), params)
+	for _, param := range params {
+		fmt.Println(param)
+	}
+}
+
+func by2(num int) string {
+	if num%2 == 0 {
+		return "ok"
+	} else {
+		return "no"
+	}
+}
+
 func main() {
 	fmt.Println("Hello, world!", time.Now())
 	fmt.Println(user.Current())
@@ -272,4 +287,80 @@ Test`)
 
 	c4 := circleArea(3)
 	fmt.Println(c4(2))
+
+	foo2()
+	foo2(10, 20)
+	foo2(10, 20, 30)
+
+	s3 := []int{1, 2, 3}
+	fmt.Println(s3)
+
+	foo2(s3...)
+
+	f3 := 1.11
+	i2 := int(f3)
+	fmt.Printf("%T %v\n", i2, i2)
+
+	s4 := []int{1, 2, 5, 6, 2, 3, 1}
+	fmt.Println(s4[2:4])
+
+	m3 := map[string]int{"Mike": 20, "Nancy": 24, "Messi": 30}
+	fmt.Printf("%T %v\n", m3, m3)
+
+	result := by2(10)
+
+	if result == "ok" {
+		fmt.Println("great")
+	}
+	fmt.Println(result)
+
+	if result2 := by2(10); result2 == "ok" {
+		fmt.Println("great 2")
+	}
+	// fmt.Println(result2)
+	/*
+		num := 6
+		if num%2 == 0 {
+			fmt.Println("by 2")
+		} else if num%3 == 0 {
+			fmt.Println("by 3")
+		} else {
+			fmt.Println("else")
+		}
+	*/
+
+	x2, y2 := 11, 12
+	if x2 == 10 && y2 == 10 {
+		fmt.Println("&&")
+	}
+
+	if x2 == 10 || y2 == 10 {
+		fmt.Println("||")
+	}
+
+	for i := 0; i < 10; i++ {
+		if i == 3 {
+			fmt.Println("continue")
+			continue
+		}
+
+		if i > 5 {
+			fmt.Println("break")
+			break
+		}
+		fmt.Println(i)
+	}
+
+	sum := 1
+	for sum < 10 {
+		sum += sum
+		fmt.Println(sum)
+	}
+	fmt.Println(sum)
+
+	/*
+		for {
+			fmt.Println("hello")
+		}
+	*/
 }
