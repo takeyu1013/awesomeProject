@@ -124,13 +124,13 @@ Test`)
 	fmt.Printf("%T, %v %t\n", t, 1, t)
 	fmt.Printf("%T, %v %t\n", f, 0, f)
 
-	fmt.Println(true && true)
+	// fmt.Println(true && true)
 	fmt.Println(true && false)
-	fmt.Println(false && false)
+	// fmt.Println(false && false)
 
-	fmt.Println(true || true)
+	// fmt.Println(true || true)
 	fmt.Println(true || false)
-	fmt.Println(false || false)
+	// fmt.Println(false || false)
 
 	fmt.Println(!true)
 	fmt.Println(!false)
@@ -177,9 +177,9 @@ Test`)
 	fmt.Println(n)
 
 	var board = [][]int{
-		[]int{0, 1, 2},
-		[]int{3, 4, 5},
-		[]int{6, 7, 8},
+		{0, 1, 2},
+		{3, 4, 5},
+		{6, 7, 8},
 	}
 	fmt.Println(board)
 	n = append(n, 100, 200, 300, 400)
