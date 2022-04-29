@@ -35,6 +35,33 @@ func foo() {
 	fmt.Printf("%T\n", xi)
 }
 
+func add(x, y int) (int, int) {
+	return x + y, x - y
+}
+
+func cal(price, item int) (result int) {
+	result = price * item
+	return
+}
+
+func convert(price int) float64 {
+	return float64(price)
+}
+
+func incrementGenerator() func() int {
+	x := 0
+	return func() int {
+		x++
+		return x
+	}
+}
+
+func circleArea(pi float64) func(radius float64) float64 {
+	return func(radius float64) float64 {
+		return pi * radius * radius
+	}
+}
+
 func main() {
 	fmt.Println("Hello, world!", time.Now())
 	fmt.Println(user.Current())
@@ -210,4 +237,39 @@ Test`)
 	if s2 == nil {
 		fmt.Println("Nil")
 	}
+
+	b2 := []byte{72, 73}
+	fmt.Println(b2)
+	fmt.Println(string(b2))
+
+	c2 := []byte("HI")
+	fmt.Println(c2)
+	fmt.Println(string(c2))
+
+	r1, r2 := add(10, 20)
+	fmt.Println(r1, r2)
+
+	r3 := cal(100, 2)
+	fmt.Println(r3)
+
+	f2 := func(x int) {
+		fmt.Println("inner func", x)
+	}
+	f2(1)
+
+	func(x int) {
+		fmt.Println("inner func", x)
+	}(1)
+
+	counter := incrementGenerator()
+	fmt.Println(counter())
+	fmt.Println(counter())
+	fmt.Println(counter())
+	fmt.Println(counter())
+
+	c3 := circleArea(3.14)
+	fmt.Println(c3(2))
+
+	c4 := circleArea(3)
+	fmt.Println(c4(2))
 }
