@@ -77,6 +77,10 @@ func by2(num int) string {
 	}
 }
 
+func getOsName() string {
+	return "dafdafad"
+}
+
 func main() {
 	fmt.Println("Hello, world!", time.Now())
 	fmt.Println(user.Current())
@@ -363,4 +367,49 @@ Test`)
 			fmt.Println("hello")
 		}
 	*/
+	l := []string{"python", "go", "java"}
+
+	for i := 0; i < len(l); i++ {
+		fmt.Println(i, l[i])
+	}
+
+	for i, v := range l {
+		fmt.Println(i, v)
+	}
+
+	for _, v := range l {
+		fmt.Println(v)
+	}
+
+	m4 := map[string]int{"apple": 100, "banana": 200}
+
+	for k, v := range m4 {
+		fmt.Println(k, v)
+	}
+
+	for k := range m4 {
+		fmt.Println(k)
+	}
+
+	for _, v := range m4 {
+		fmt.Println(v)
+	}
+
+	switch os := getOsName(); os {
+	case "mac":
+		fmt.Println("Mac!!")
+	case "windows":
+		fmt.Println("Windows!!")
+	default:
+		fmt.Println("Default!!", os)
+	}
+
+	t2 := time.Now()
+	fmt.Println(t2.Hour())
+	switch {
+	case t2.Hour() < 12:
+		fmt.Println("Morning")
+	case t2.Hour() < 17:
+		fmt.Println("Afternoon")
+	}
 }
