@@ -1,0 +1,10 @@
+2022/05/01 15:33:52 lesson.go:456: Exit open fdafdsafa: no such file or directory
+2022/05/01 15:35:03 lesson.go:456: Exit open fdafdsafa: no such file or directory
+2022/05/01 15:40:17 lesson.go:456: Exit open fdafdsafa: no such file or directory
+2022/05/01 15:40:59 lesson.go:458: logging!
+2022/05/01 15:40:59 lesson.go:459: string test
+2022/05/01 15:44:19 lesson.go:458: logging!
+2022/05/01 15:44:19 lesson.go:459: string test
+2022/05/01 15:46:23 lesson.go:458: logging!
+2022/05/01 15:46:23 lesson.go:459: string test
+2022/05/01 15:46:23 lesson.go:479: Error

@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"io"
+	"log"
 	"os"
 	"os/user"
 	"strconv"
@@ -88,6 +90,12 @@ func foo3() {
 	fmt.Println("hello foo")
 }
 
+func LoggingSettings(logFile string) {
+	logfile, _ := os.OpenFile(logFile, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+	multiLogFile := io.MultiWriter(os.Stdout, logfile)
+	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
+	log.SetOutput(multiLogFile)
+}
 func main() {
 	fmt.Println("Hello, world!", time.Now())
 	fmt.Println(user.Current())
@@ -441,4 +449,33 @@ Test`)
 	data := make([]byte, 100)
 	file.Read(data)
 	fmt.Println(string(data))
+
+	LoggingSettings("test.log")
+	_, err := os.Open("fdafdsafa")
+	if err != nil {
+		// log.Fatalln("Exit", err)
+	}
+	log.Println("logging!")
+	log.Printf("%T %v", "test", "test")
+
+	// log.Fatalf("%T %v", "test", "test")
+	// log.Fatalln("error!!")
+
+	fmt.Println("ok!")
+
+	file2, err := os.Open("./lesson.go")
+	if err != nil {
+		log.Fatal("Error!")
+	}
+	defer file2.Close()
+	data2 := make([]byte, 100)
+	count, err := file.Read(data2)
+	if err != nil {
+		log.Fatalln("Error")
+	}
+	fmt.Println(count, string(data2))
+
+	if err = os.Chdir("test"); err != nil {
+		log.Fatalln("Error")
+	}
 }
