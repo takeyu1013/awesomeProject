@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"os/user"
 	"strconv"
 	"strings"
@@ -77,10 +78,18 @@ func by2(num int) string {
 	}
 }
 
+<<<<<<< HEAD
 func getOsName() string {
 	return "dafdafad"
 }
 
+=======
+func foo3() {
+	defer fmt.Println("world foo")
+
+	fmt.Println("hello foo")
+}
+>>>>>>> 3888f31 (✨)
 func main() {
 	fmt.Println("Hello, world!", time.Now())
 	fmt.Println(user.Current())
@@ -367,6 +376,7 @@ Test`)
 			fmt.Println("hello")
 		}
 	*/
+
 	l := []string{"python", "go", "java"}
 
 	for i := 0; i < len(l); i++ {
@@ -412,4 +422,25 @@ Test`)
 	case t2.Hour() < 17:
 		fmt.Println("Afternoon")
 	}
+
+	/*
+		defer fmt.Println("world")
+
+		foo3()
+
+		fmt.Println("hello")
+	*/
+
+	/*
+		fmt.Println("run")
+		defer fmt.Println(1)
+		defer fmt.Println(2)
+		defer fmt.Println(3)
+		fmt.Println("success")
+	*/
+	file, _ := os.Open("./lesson.go")
+	defer file.Close()
+	data := make([]byte, 100)
+	file.Read(data)
+	fmt.Println(string(data))
 }
