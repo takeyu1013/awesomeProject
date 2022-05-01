@@ -78,18 +78,16 @@ func by2(num int) string {
 	}
 }
 
-<<<<<<< HEAD
 func getOsName() string {
 	return "dafdafad"
 }
 
-=======
 func foo3() {
 	defer fmt.Println("world foo")
 
 	fmt.Println("hello foo")
 }
->>>>>>> 3888f31 (✨)
+
 func main() {
 	fmt.Println("Hello, world!", time.Now())
 	fmt.Println(user.Current())
