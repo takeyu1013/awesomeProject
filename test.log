@@ -8,3 +8,16 @@
 2022/05/01 15:46:23 lesson.go:458: logging!
 2022/05/01 15:46:23 lesson.go:459: string test
 2022/05/01 15:46:23 lesson.go:479: Error
+2022/05/01 20:57:40 lesson.go:467: logging!
+2022/05/01 20:57:40 lesson.go:468: string test
+2022/05/01 20:57:40 lesson.go:488: Error
+2022/05/01 20:59:03 lesson.go:467: logging!
+2022/05/01 20:59:03 lesson.go:468: string test
+2022/05/01 21:00:57 lesson.go:467: logging!
+2022/05/01 21:00:57 lesson.go:468: string test
+2022/05/01 21:11:24 lesson.go:467: logging!
+2022/05/01 21:11:24 lesson.go:468: string test
+2022/05/01 21:11:58 lesson.go:467: logging!
+2022/05/01 21:11:58 lesson.go:468: string test
+2022/05/01 21:12:31 lesson.go:467: logging!
+2022/05/01 21:12:31 lesson.go:468: string test

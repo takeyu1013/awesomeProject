@@ -96,6 +96,15 @@ func LoggingSettings(logFile string) {
 	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
 	log.SetOutput(multiLogFile)
 }
+
+func thirdPartyConnectDB() {
+	panic("Unable to connect database")
+}
+
+func save() {
+	thirdPartyConnectDB()
+}
+
 func main() {
 	fmt.Println("Hello, world!", time.Now())
 	fmt.Println(user.Current())
@@ -476,6 +485,20 @@ Test`)
 	fmt.Println(count, string(data2))
 
 	if err = os.Chdir("test"); err != nil {
-		log.Fatalln("Error")
+		// log.Fatalln("Error")
 	}
+
+	// save()
+	fmt.Println("OK?")
+
+	l2 := []int{100, 300, 23, 11, 23, 2, 4, 6, 4}
+	min := l2[0]
+	fmt.Println(min)
+	for item := range l2 {
+		fmt.Println(item)
+		if min > item {
+			min = item
+		}
+	}
+	fmt.Println(min)
 }
