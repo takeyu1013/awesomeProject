@@ -21,3 +21,47 @@
 2022/05/01 21:11:58 lesson.go:468: string test
 2022/05/01 21:12:31 lesson.go:467: logging!
 2022/05/01 21:12:31 lesson.go:468: string test
+2022/05/02 21:15:33 lesson.go:467: logging!
+2022/05/02 21:15:33 lesson.go:468: string test
+2022/05/02 21:21:43 lesson.go:467: logging!
+2022/05/02 21:21:43 lesson.go:468: string test
+2022/05/02 21:24:12 lesson.go:467: logging!
+2022/05/02 21:24:12 lesson.go:468: string test
+2022/05/02 21:27:03 lesson.go:471: logging!
+2022/05/02 21:27:03 lesson.go:472: string test
+2022/05/02 21:28:19 lesson.go:471: logging!
+2022/05/02 21:28:19 lesson.go:472: string test
+2022/05/02 21:29:55 lesson.go:471: logging!
+2022/05/02 21:29:55 lesson.go:472: string test
+2022/05/02 21:31:08 lesson.go:471: logging!
+2022/05/02 21:31:08 lesson.go:472: string test
+2022/05/02 21:31:34 lesson.go:471: logging!
+2022/05/02 21:31:34 lesson.go:472: string test
+2022/05/02 21:32:10 lesson.go:471: logging!
+2022/05/02 21:32:10 lesson.go:472: string test
+2022/05/02 21:37:16 lesson.go:471: logging!
+2022/05/02 21:37:16 lesson.go:472: string test
+2022/05/02 21:40:12 lesson.go:476: logging!
+2022/05/02 21:40:12 lesson.go:477: string test
+2022/05/02 21:40:45 lesson.go:476: logging!
+2022/05/02 21:40:45 lesson.go:477: string test
+2022/05/02 21:41:41 lesson.go:476: logging!
+2022/05/02 21:41:41 lesson.go:477: string test
+2022/05/02 21:42:04 lesson.go:477: logging!
+2022/05/02 21:42:04 lesson.go:478: string test
+2022/05/02 21:42:45 lesson.go:477: logging!
+2022/05/02 21:42:45 lesson.go:478: string test
+2022/05/02 21:43:19 lesson.go:477: logging!
+2022/05/02 21:43:19 lesson.go:478: string test
+2022/05/02 21:44:46 lesson.go:476: logging!
+2022/05/02 21:44:46 lesson.go:477: string test
+2022/05/02 21:45:21 lesson.go:476: logging!
+2022/05/02 21:45:21 lesson.go:477: string test
+2022/05/02 21:46:34 lesson.go:476: logging!
+2022/05/02 21:46:34 lesson.go:477: string test
+2022/05/02 21:53:41 lesson.go:484: logging!
+2022/05/02 21:53:41 lesson.go:485: string test
+2022/05/02 21:54:41 lesson.go:484: logging!
+2022/05/02 21:54:41 lesson.go:485: string test
+2022/05/02 21:55:33 lesson.go:484: logging!
+2022/05/02 21:55:33 lesson.go:485: string test

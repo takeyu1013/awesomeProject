@@ -105,6 +105,23 @@ func save() {
 	thirdPartyConnectDB()
 }
 
+func one(x *int) {
+	*x = 1
+}
+
+type Vertex struct {
+	X, Y int
+	S    string
+}
+
+func changeVertex(v Vertex) {
+	v.X = 1000
+}
+
+func changeVertex2(v *Vertex) {
+	v.X = 1000
+}
+
 func main() {
 	fmt.Println("Hello, world!", time.Now())
 	fmt.Println(user.Current())
@@ -492,13 +509,113 @@ Test`)
 	fmt.Println("OK?")
 
 	l2 := []int{100, 300, 23, 11, 23, 2, 4, 6, 4}
-	min := l2[0]
-	fmt.Println(min)
-	for item := range l2 {
-		fmt.Println(item)
-		if min > item {
-			min = item
+
+	var min int
+
+	for i, num := range l2 {
+		if i == 0 {
+			min = num
+			continue
+		}
+
+		if min > num {
+			min = num
 		}
 	}
+
 	fmt.Println(min)
+
+	m5 := map[string]int{
+		"apple":  200,
+		"banana": 300,
+		"grapes": 150,
+		"orange": 80,
+		"papaya": 500,
+		"kiwi":   90,
+	}
+
+	sum2 := 0
+	for _, v := range m5 {
+		sum2 += v
+	}
+
+	fmt.Println(sum2)
+
+	var n2 int = 100
+	one(&n2)
+	fmt.Println(n2)
+	/*
+		fmt.Println(n2)
+
+		fmt.Println(&n2)
+
+		var p *int = &n2
+
+		fmt.Println(p)
+
+		fmt.Println(*p)
+	*/
+
+	s5 := make([]int, 0)
+	fmt.Printf("%T\n", s5)
+
+	m6 := make(map[string]int)
+	fmt.Printf("%T\n", m6)
+
+	ch := make(chan int)
+	fmt.Printf("%T\n", ch)
+
+	var p2 *int = new(int)
+	fmt.Printf("%T\n", p2)
+
+	var st = new(struct{})
+	fmt.Printf("%T\n", st)
+
+	/*
+		var p2 *int = new(int)
+		fmt.Println(*p2)
+		*p2++
+		fmt.Println(*p2)
+
+		var p3 *int
+		fmt.Println(p3)
+		*p3++
+		fmt.Println(p3)
+	*/
+
+	v3 := Vertex{1, 2, "test"}
+	changeVertex(v3)
+	fmt.Println(v3)
+
+	v4 := &Vertex{1, 2, "test"}
+	changeVertex2(v4)
+	fmt.Println(*v4)
+
+	/*
+		v3 := Vertex{X: 1, Y: 2}
+		fmt.Println(v3)
+		fmt.Println(v3.X, v3.Y)
+
+		v4 := Vertex{X: 1}
+		fmt.Println(v4)
+
+		v5 := Vertex{1, 2, "test"}
+		fmt.Println(v5)
+
+		v6 := Vertex{}
+		fmt.Printf("%T %v\n", v6, v6)
+
+		var v7 Vertex
+		fmt.Printf("%T %v\n", v7, v7)
+
+		v8 := new(Vertex)
+		fmt.Printf("%T %v\n", v8, v8)
+
+		v9 := &Vertex{}
+		fmt.Printf("%T %v\n", v9, v9)
+
+		s := make([]int, 0)
+		s := []int{}
+		fmt.Println(s)
+	*/
 }
