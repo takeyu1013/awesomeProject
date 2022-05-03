@@ -122,6 +122,54 @@ func changeVertex2(v *Vertex) {
 	v.X = 1000
 }
 
+type Vertex2 struct {
+	x, y int
+}
+
+func (v Vertex2) Area() int {
+	return v.x * v.y
+}
+
+func (v *Vertex2) Scale(i int) {
+	v.x = v.x * i
+	v.y = v.y * i
+}
+
+func Area(v Vertex2) int {
+	return v.x * v.y
+}
+
+func New(x, y int) *Vertex2 {
+	return &Vertex2{x, y}
+}
+
+type Vertex3D struct {
+	Vertex2
+	z int
+}
+
+func (v Vertex3D) Area3D() int {
+	return v.x * v.y * v.z
+}
+
+func (v *Vertex3D) Scale3D(i int) {
+	v.x = v.x * i
+	v.y = v.y * i
+	v.z = v.z * i
+}
+
+func New3D(x, y, z int) *Vertex3D {
+	return &Vertex3D{Vertex2{x, y}, z}
+}
+
+type MyInt int
+
+func (i MyInt) Double() int {
+	fmt.Printf("%T %v\n", i, i)
+	fmt.Printf("%T %v\n", 1, 1)
+	return int(i * 2)
+}
+
 func main() {
 	fmt.Println("Hello, world!", time.Now())
 	fmt.Println(user.Current())
@@ -618,4 +666,36 @@ Test`)
 		s := []int{}
 		fmt.Println(s)
 	*/
+
+	var i3 int = 10
+	var p3 *int
+	p3 = &i3
+	var j int
+	j = *p3
+	fmt.Println(j)
+
+	var i4 int = 100
+	var j2 int = 200
+	var p4 *int
+	var p5 *int
+	p4 = &i4
+	p5 = &j2
+	i4 = *p4 + *p5
+	p5 = p4
+	j2 = *p5 + i4
+	fmt.Println(j2)
+
+	// v5 := Vertex2{3, 4}
+	// fmt.Println(Area(v5))
+	v5 := New(3, 4)
+	v5.Scale(10)
+	fmt.Println(v5.Area())
+
+	v6 := New3D(3, 4, 5)
+	v6.Scale3D(10)
+	// fmt.Println(v6.Area())
+	fmt.Println(v6.Area3D())
+
+	myInt := MyInt(10)
+	fmt.Println(myInt.Double())
 }
