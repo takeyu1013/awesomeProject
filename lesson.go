@@ -170,6 +170,32 @@ func (i MyInt) Double() int {
 	return int(i * 2)
 }
 
+type Human interface {
+	Say() string
+}
+
+type Person struct {
+	Name string
+}
+
+type Dog struct {
+	Name string
+}
+
+func (p *Person) Say() string {
+	p.Name = "Mr." + p.Name
+	fmt.Println(p.Name)
+	return p.Name
+}
+
+func DriveCar(human Human) {
+	if human.Say() == "Mr.Mike" {
+		fmt.Println("Run")
+	} else {
+		fmt.Println("Get out")
+	}
+}
+
 func main() {
 	fmt.Println("Hello, world!", time.Now())
 	fmt.Println(user.Current())
@@ -698,4 +724,11 @@ Test`)
 
 	myInt := MyInt(10)
 	fmt.Println(myInt.Double())
+
+	var mike Human = &Person{"Mike"}
+	var x3 Human = &Person{"X"}
+	// var dog Dog = Dog{"dog"}
+	DriveCar(mike)
+	DriveCar(x3)
+	// DriveCar(dog)
 }
