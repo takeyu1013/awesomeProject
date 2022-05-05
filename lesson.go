@@ -196,6 +196,24 @@ func DriveCar(human Human) {
 	}
 }
 
+func do(i interface{}) {
+	/*
+			ii := i.(int)
+			ii *= 2
+			fmt.Println(ii)
+		ss := i.(string)
+		fmt.Println(ss + "!")
+	*/
+	switch v := i.(type) {
+	case int:
+		fmt.Println(v * 2)
+	case string:
+		fmt.Println(v + "!")
+	default:
+		fmt.Printf("I don't know %T\n", v)
+	}
+}
+
 func main() {
 	fmt.Println("Hello, world!", time.Now())
 	fmt.Println(user.Current())
@@ -731,4 +749,12 @@ Test`)
 	DriveCar(mike)
 	DriveCar(x3)
 	// DriveCar(dog)
+
+	do(10)
+	do("Mike")
+	do(true)
+
+	var i5 int = 10
+	ii := float64(10)
+	fmt.Println(i5, ii)
 }
