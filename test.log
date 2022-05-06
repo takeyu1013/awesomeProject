@@ -99,3 +99,15 @@
 2022/05/05 21:30:23 lesson.go:577: string test
 2022/05/05 21:31:39 lesson.go:576: logging!
 2022/05/05 21:31:39 lesson.go:577: string test
+2022/05/06 17:53:58 lesson.go:581: logging!
+2022/05/06 17:53:58 lesson.go:582: string test
+2022/05/06 17:55:19 lesson.go:585: logging!
+2022/05/06 17:55:19 lesson.go:586: string test
+2022/05/06 17:58:53 lesson.go:589: logging!
+2022/05/06 17:58:53 lesson.go:590: string test
+2022/05/06 18:02:09 lesson.go:602: logging!
+2022/05/06 18:02:09 lesson.go:603: string test
+2022/05/06 18:02:55 lesson.go:602: logging!
+2022/05/06 18:02:55 lesson.go:603: string test
+2022/05/06 18:07:34 lesson.go:602: logging!
+2022/05/06 18:07:34 lesson.go:603: string test
