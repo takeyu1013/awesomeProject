@@ -240,6 +240,18 @@ func myFunc() error {
 	return &UserNotFound{Username: "mike"}
 }
 
+type Vertex3 struct {
+	X, Y int
+}
+
+func (vertex Vertex3) Plus() int {
+	return vertex.X + vertex.Y
+}
+
+func (vertex Vertex3) String() string {
+	return fmt.Sprintf("X is %d! Y is %d!", vertex.X, vertex.Y)
+}
+
 func main() {
 	fmt.Println("Hello, world!", time.Now())
 	fmt.Println(user.Current())
@@ -803,4 +815,7 @@ Test`)
 		}
 	}
 
+	v7 := Vertex3{3, 4}
+	fmt.Println(v7.Plus())
+	fmt.Println(v7)
 }
