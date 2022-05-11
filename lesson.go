@@ -272,8 +272,9 @@ func goroutine1(s []int, c chan int) {
 	sum := 0
 	for _, v := range s {
 		sum += v
+		c <- sum
 	}
-	c <- sum
+	close(c)
 }
 
 func main() {
@@ -851,11 +852,20 @@ Test`)
 	wg.Wait()
 
 	s6 := []int{1, 2, 3, 4, 5}
-	c5 := make(chan int) // 15 15
+	c5 := make(chan int, len(s6)) // 15 15
 	go goroutine1(s6, c5)
-	go goroutine1(s6, c5)
-	x4 := <-c5
-	fmt.Println(x4)
-	y3 := <-c5
-	fmt.Println(y3)
+	for i := range c5 {
+		fmt.Println(i)
+	}
+
+	ch2 := make(chan int, 2)
+	ch2 <- 100
+	fmt.Println(len(ch2))
+	ch2 <- 200
+	fmt.Println(len(ch2))
+	close(ch2)
+
+	for c := range ch2 {
+		fmt.Println(c)
+	}
 }
