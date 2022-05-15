@@ -344,7 +344,7 @@ func (c *Counter) Value(key string) int {
 	return c.v[key]
 }
 
-func main() {
+func lesson() {
 	fmt.Println("Hello, world!", time.Now())
 	fmt.Println(user.Current())
 	fmt.Println(i, f64, s, t, f)
