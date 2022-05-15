@@ -2,20 +2,12 @@ package main
 
 import (
 	"fmt"
-
-	"awesomeProject/mylib"
-	"awesomeProject/mylib/under"
+	"time"
 )
 
-func main2() {
-	s := []int{1, 2, 3, 4, 5}
-	fmt.Println(mylib.Average(s))
-
-	mylib.Say()
-	under.Hello()
-	person := mylib.Person{Name: "Mike", Age: 20}
-	fmt.Println(person)
-
-	fmt.Println(mylib.Public)
-	// fmt.Println(mylib.private)
+func main() {
+	t := time.Now()
+	fmt.Println(t)
+	fmt.Println(t.Format(time.RFC3339))
+	fmt.Println(t.Year(), t.Month(), t.Day(), t.Hour(), t.Minute(), t.Second())
 }
