@@ -1,13 +1,34 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
-	"time"
+	"io/ioutil"
+	"net/http"
+	"net/url"
 )
 
 func main() {
-	t := time.Now()
-	fmt.Println(t)
-	fmt.Println(t.Format(time.RFC3339))
-	fmt.Println(t.Year(), t.Month(), t.Day(), t.Hour(), t.Minute(), t.Second())
+	// resp, _ := http.Get("http://example.com")
+	// defer resp.Body.Close()
+	// body, _ := ioutil.ReadAll(resp.Body)
+	// fmt.Println(string(body))
+
+	base, _ := url.Parse("http://example.com/")
+	reference, _ := url.Parse("/test?a=1&b=2")
+	endpoint := base.ResolveReference(reference).String()
+	fmt.Println(endpoint)
+	// req, _ := http.NewRequest("GET", endpoint, nil)
+	req, _ := http.NewRequest("POST", endpoint, bytes.NewBuffer([]byte("password")))
+	req.Header.Add("If-None-Match", `W/"wyzzy"`)
+	q := req.URL.Query()
+	q.Add("c", "3&%")
+	fmt.Println(q)
+	fmt.Println(q.Encode())
+	req.URL.RawQuery = q.Encode()
+
+	var client *http.Client = &http.Client{}
+	resp, _ := client.Do(req)
+	body, _ := ioutil.ReadAll(resp.Body)
+	fmt.Println(string(body))
 }
