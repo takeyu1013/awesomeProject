@@ -12,6 +12,5 @@ func main() {
 	fmt.Println(mylib.Average(s))
 
 	mylib.Say()
-
 	under.Hello()
 }
