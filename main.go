@@ -7,7 +7,7 @@ import (
 	"awesomeProject/mylib/under"
 )
 
-func main() {
+func main2() {
 	s := []int{1, 2, 3, 4, 5}
 	fmt.Println(mylib.Average(s))
 
