@@ -1,37 +1,17 @@
 package main
 
 import (
-	"context"
 	"fmt"
-	"time"
 
-	"golang.org/x/sync/semaphore"
+	"github.com/markcheno/go-quote"
+	"github.com/markcheno/go-talib"
 )
 
-var s *semaphore.Weighted = semaphore.NewWeighted(1)
-
-func longProcess(ctx context.Context) {
-	isAcquire := s.TryAcquire(1)
-	if !isAcquire {
-		fmt.Println("Could not get lock")
-		return
-	}
-	// if err := s.Acquire(ctx, 1); err != nil {
-	// 	fmt.Println(err)
-	// 	return
-	// }
-	defer s.Release(1)
-	fmt.Println("Wait...")
-	time.Sleep(1 * time.Second)
-	fmt.Println("Done")
-}
-
 func main() {
-	ctx := context.TODO()
-	go longProcess(ctx)
-	go longProcess(ctx)
-	go longProcess(ctx)
-	time.Sleep(2 * time.Second)
-	go longProcess(ctx)
-	time.Sleep(5 * time.Second)
+	spy, _ := quote.NewQuoteFromCoinbase("BTC-USD", "2021-04-01", "2022-01-01", quote.Daily)
+	fmt.Print(spy.CSV())
+	rsi2 := talib.Rsi(spy.Close, 2)
+	fmt.Println(rsi2)
+	mva := talib.Ema(spy.Close, 14)
+	fmt.Println(mva)
 }
