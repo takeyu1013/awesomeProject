@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"net/http"
 )
 
 type Page struct {
@@ -30,4 +31,6 @@ func main() {
 
 	p2, _ := loadPage(p1.Title)
 	fmt.Println(string(p2.Body))
+
+	http.ListenAndServe(":8080", nil)
 }
